@@ -8,12 +8,3 @@ before_install:
 script:
   - docker run pedroha/docker-react timeout -t 10 npm run test -- --ci --watchAll=false
 
-before_deploy:
-  - docker run pedroha/docker-react npm run build
-
-deploy:
-  provider: surge
-  project: /app/build/
-  domain: ph-style-transfer.surge.sh
-  on:
-    branch: master
