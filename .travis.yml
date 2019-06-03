@@ -6,7 +6,7 @@ before_install:
   - docker build -t pedroha/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run pedroha/docker-react timeout npm run test -- --ci --watchAll=false
+  - docker run pedroha/docker-react timeout -t 10 npm run test -- --ci --watchAll=false
   - docker run pedroha/docker-react npm run build
 
 deploy:
