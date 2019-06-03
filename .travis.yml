@@ -10,7 +10,7 @@ script:
 
 deploy:
   provider: surge
-  project: ./build/
+  project: /app/build/
   domain: ph-style-transfer.surge.sh
   on:
     branch: master
