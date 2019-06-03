@@ -8,8 +8,3 @@ before_install:
 script:
   - docker run travis-build npm run test -- --coverage
 
-deploy:
-  provider: elasticbeanstalk
-  region: "us-west-2"
-  app: "docker"
-  
