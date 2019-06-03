@@ -7,4 +7,13 @@ before_install:
 
 script:
   - docker run pedroha/docker-react npm run test -- --coverage
+  - docker run pedroha/docker-react npm run build
 
+deploy:
+  provider: elasticbean
+  elasticbeanstalk-us-east-1-840170328054
+
+deploy:
+  provider: surge
+  project: ./build/
+  domain: ph-style-transfer.surge.sh
