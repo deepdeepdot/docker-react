@@ -7,7 +7,6 @@ before_install:
 
 script:
   - docker run pedroha/docker-react timeout -t 10 npm run test -- --ci --watchAll=false
-  - docker run pedroha/docker-react npm run build
 
 deploy:
   provider: surge
